@@ -9,7 +9,6 @@
 		<p><%= f.body %></p>
 		<%= image_tag f.thumb_image unless f.thumb_image.nil? %>
 		<%= link_to "Edit", edit_portfolio_path(f) %>&nbsp 
-		<a href="/portfolios/<%= f.id %>/edit">Edit two</a>
 		<%= link_to 'Delete portfolio item', portfolio_path(f), method: :delete, data: { confirm: 'Are you sure?' } %>
 		<hr>
 
