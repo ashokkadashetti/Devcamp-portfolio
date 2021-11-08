@@ -1,8 +1,16 @@
-
-<%= image_tag @portfolio_items.main_image unless @portfolio_items.main_image.nil? %>
+<h1>Show page</h1>
+<%= image_tag @portfolio_items.main_image %>
 
 <h1><%= @portfolio_items.title %></h1>
 
 <em><%= @portfolio_items.subtitle %></em>
 
 <p><%= @portfolio_items.body %></p>
+
+<h2>Technologies Used</h2>
+
+<%= @portfolio_items.technologies.each do |t| %>
+<p>
+	<%= t.name %>
+</p>
+<% end %>
