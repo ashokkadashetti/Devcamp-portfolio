@@ -1,8 +1,10 @@
-<h1>HomePage</h1>
+<h1>HomePage...</h1>
 
-<h1>Blog posts</h1>
+<h1>Hi, <%= current_user.first_name if current_user %></h1>
+
+<h2>Blog posts</h2>
 <%= @posts.inspect %>
 
 
-<h1>Skills</h1>
+<h3>Skills</h3>
 <%= @skills.inspect %>
