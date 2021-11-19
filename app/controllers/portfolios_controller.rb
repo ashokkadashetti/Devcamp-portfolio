@@ -1,11 +1,16 @@
 class PortfoliosController < ApplicationController
+
 	def index
 		@portfolio_items=Portfolio.all
 	end
 
+#........................................................................................
+
 	def angular
 		@angular_portfolio_items=Portfolio.angular
 	end
+
+#........................................................................................	
 
 	def new
 		@portfolio_items=Portfolio.new
@@ -13,47 +18,69 @@ class PortfoliosController < ApplicationController
 		2.times { @portfolio_items.technologies.build }
 	end
 
+#........................................................................................
 
 	def create
-		@portfolio_items=Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
+		@portfolio_items=Portfolio.new(portfolio_params)
 
 		respond_to do |format|
 			if @portfolio_items.save
-				format.html{ redirect_to portfolios_path, notice: 'Portfolio created successfully.'}
+				format.html{ redirect_to portfolios_path, 
+							 notice: 'Portfolio created successfully.'}
 			else
         		format.html { render :new}
 			end
 		end	
 	end
 
+#........................................................................................
+
 	def edit
 		@portfolio_items=Portfolio.find(params[:id])
 	end
 
+#........................................................................................
 
   	def update
   		@portfolio_items=Portfolio.find(params[:id])
 
     	respond_to do |format|
-      		if @portfolio_items.update(params.require(:portfolio).permit(:title, :subtitle, :body))
-        		format.html { redirect_to portfolios_path, notice: "Portfolio was successfully updated." }
+      		if @portfolio_items.update(portfolio_params)
+        		format.html { redirect_to portfolios_path,
+        					  notice: "Portfolio was successfully updated." }
       		else
         		format.html { render :edit}
       		end
     	end
   	end
 
+#........................................................................................
+
   	def show
   		@portfolio_items=Portfolio.find(params[:id])
   	end
 
+#........................................................................................
 
   	def destroy
   		@portfolio_items=Portfolio.find(params[:id])
     	@portfolio_items.destroy
     	respond_to do |format|
-      		format.html { redirect_to portfolios_url, notice: "Record was successfully destroyed." }
+      		format.html { redirect_to portfolios_url,
+      					  notice: "Record was successfully destroyed." }
     	end
+  	end
+
+#........................................................................................S
+
+  	private
+
+  	def portfolio_params
+  		params.require(:portfolio).permit(:title,
+  										  :subtitle,
+  										  :body,
+  										  technologies_attributes: [:name]
+  										  )
   	end
 
 end
