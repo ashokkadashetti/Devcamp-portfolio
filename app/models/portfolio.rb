@@ -1,9 +1,10 @@
 class Portfolio < ApplicationRecord
 
-	has_many :technologies
+	has_many :technologies, dependent: :destroy
 
-	accepts_nested_attributes_for :technologies,
+	accepts_nested_attributes_for :technologies, allow_destroy: true, update_only: true,
 								   reject_if: lambda {|attrs| attrs['name'].blank?}
+
 
 
 	include Placeholder
