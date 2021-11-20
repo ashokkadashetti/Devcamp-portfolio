@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -17,14 +17,6 @@
     <br><br>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <div>
-      <div><%= link_to "Home", root_path %> </div>
-      <div><%= link_to "About", about_path %> </div>
-      <div><%= link_to "Contact", contact_path %> </div>
-      <div><%= link_to "Portfolio", portfolios_path %> </div>
-      <div><%= link_to "Blogs", blogs_path %> </div>
-    </div><br>
 
     <% if current_user.is_a?(User) %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -35,7 +27,15 @@
       
     <% end %>
 
-    <%= yield %>
+    <%= yield %><br><br>
+
+    <div>
+      <div><%= link_to "Home", root_path %> </div>
+      <div><%= link_to "About", about_path %> </div>
+      <div><%= link_to "Contact", contact_path %> </div>
+      <div><%= link_to "Portfolio", portfolios_path %> </div>
+      <div><%= link_to "Blogs", blogs_path %> </div>
+    </div>
 
     <% if session[:source] %>
         <p>Thanks for visiting me from <%= session[:source] %></p>

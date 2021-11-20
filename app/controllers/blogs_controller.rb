@@ -1,4 +1,6 @@
  class BlogsController < ApplicationController
+
+  layout "blog"
   
   before_action :set_blog, only: %i[ show edit update destroy toggle_status]
 
