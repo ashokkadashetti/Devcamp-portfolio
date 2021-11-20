@@ -1,4 +1,5 @@
  class BlogsController < ApplicationController
+  
   before_action :set_blog, only: %i[ show edit update destroy toggle_status]
 
   # GET /blogs or /blogs.json
@@ -6,18 +7,26 @@
     @blogs = Blog.all
   end
 
+#..............................................................................
+
   # GET /blogs/1 or /blogs/1.json
   def show
   end
+
+#..............................................................................
 
   # GET /blogs/new
   def new
     @blog = Blog.new
   end
 
+#..............................................................................
+
   # GET /blogs/1/edit
   def edit
   end
+
+#..............................................................................
 
   # POST /blogs or /blogs.json
   def create
@@ -34,6 +43,8 @@
     end
   end
 
+#..............................................................................
+
   # PATCH/PUT /blogs/1 or /blogs/1.json
   def update
     respond_to do |format|
@@ -47,6 +58,8 @@
     end
   end
 
+#..............................................................................
+
   # DELETE /blogs/1 or /blogs/1.json
   def destroy
     @blog.destroy
@@ -55,6 +68,8 @@
       format.json { head :no_content }
     end
   end
+
+#..............................................................................
 
   def toggle_status
 
@@ -67,13 +82,14 @@
     redirect_to blogs_url
   end
 
+#..............................................................................
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.friendly.find(params[:id])
     end
-
+#............................................................
     # Only allow a list of trusted parameters through.
     def blog_params
       params.require(:blog).permit(:title, :body)
