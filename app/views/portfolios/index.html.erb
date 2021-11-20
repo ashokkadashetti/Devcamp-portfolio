@@ -9,7 +9,10 @@
 		<p><%= f.body %></p>
 		<%= image_tag f.thumb_image unless f.thumb_image.nil? %>
 		<%= link_to "Edit", edit_portfolio_path(f) %>&nbsp 
-		<%= link_to 'Delete portfolio item', portfolio_path(f), method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'Delete portfolio item', portfolio_path(f),
+			method: :delete,
+			data: { confirm: 'Are you sure?'
+		} %>
 		<hr>
 
 	<% end -%>
