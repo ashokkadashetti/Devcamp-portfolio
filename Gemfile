@@ -52,3 +52,6 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'devise', '~> 4.8'
 gem 'pry', '~> 0.13.1'
 
+gem 'bootstrap', '~> 5.1.3'
+
+
