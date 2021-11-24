@@ -12,6 +12,11 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+
+require("customjs/htmlsortable")
+
+require("jquery")
+
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
