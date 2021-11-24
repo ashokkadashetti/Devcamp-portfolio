@@ -14,14 +14,14 @@
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= form.label :body %>
     <%= form.text_area :body %>
-  </div>
+  </div><br>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div>
+    <%= form.submit class: "btn btn-outline-secondary" %>
   </div>
 <% end %>
