@@ -4,6 +4,6 @@
 <%= link_to "Create new Portfolio item", new_portfolio_path if logged_in?(:site_admin) %>
 	<hr>
 
-	<div class="sortable">
+	<div class="<%= "sortable" if logged_in?(:site_admin) %>">
 		<%= render partial:"portfolio_items", collection: @portfolio_items %>
 	</div>
