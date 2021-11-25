@@ -17,6 +17,9 @@ require("customjs/htmlsortable")
 
 require("jquery")
 
+
+require("coffee/portfolios.coffee")
+
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
