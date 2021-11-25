@@ -8,9 +8,18 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+require("customjs/htmlsortable")
+
+require("jquery")
+
+
+require("coffee/portfolios.coffee")
 
 //= require jquery3
 //= require popper
