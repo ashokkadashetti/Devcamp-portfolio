@@ -15,6 +15,7 @@ ActiveStorage.start()
 
 
 require("customjs/htmlsortable")
+require("customjs/cable")
 
 require("jquery")
 
@@ -24,3 +25,4 @@ require("coffee/portfolios.coffee")
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require cable

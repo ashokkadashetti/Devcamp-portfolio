@@ -57,4 +57,6 @@ gem 'bootstrap', '~> 5.1.3'
 
 gem 'petergate', '~> 3.0'
 
+gem 'redis', '~> 4.5', '>= 4.5.1'
+
 
