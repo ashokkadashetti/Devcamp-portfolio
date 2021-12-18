@@ -13,14 +13,30 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-
-require("customjs/htmlsortable")
-
 require("jquery")
 
-
 require("coffee/portfolios.coffee")
+
+
+
+require("customjs/htmlsortable")
+require("customjs/cable")
+
+
+
+
+
+
+
 
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require cable
+//= require rails-ujs
+//= require_tree .
+
+// app/javascripts/cable.js
+//= require action_cable
+//= require_self
+//= require_tree ./channels

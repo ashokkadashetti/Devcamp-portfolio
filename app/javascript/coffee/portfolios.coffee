@@ -22,9 +22,9 @@ ready = ->
         position: i + 1
       return
   $.ajax
-  	type: 'PUT'
-  	url: '/portfolios/sort'
-  	data: order: updated_order
+    type: 'PUT'
+    url: '/portfolios/sort'
+    data: order: updated_order
   return
 
 $(document).ready ready
